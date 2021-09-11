@@ -51,11 +51,12 @@ sheet3_xls = 'ques3'
 value1 = []
 value2 = []
 value3 = []
+sumall = []
 
 x = 0
 y = 0
 sum = 0
-for y in range(2,24):
+for y in range(2,25):
     ran = random.uniform(0.8,1.2)
     for x in range(6,407):
         data = sheet1.cell_value(x,1)
@@ -66,14 +67,18 @@ for y in range(2,24):
         else:
             value = 0
             value1.append(value)
+    sumall.append(sum)
     print(value1)
     print("第"+str(y)+"周的总量： "+str(sum))
     sum = 0
     value1 = []
+print("总量合计"+str(sumall))
+sumall = []
+
 
 
 print("################")
-for y in range(2,24):
+for y in range(2,25):
     ran = random.uniform(0.8,1.2)
     for x in range(6,407):
         data = sheet2.cell_value(x,1)
@@ -84,12 +89,15 @@ for y in range(2,24):
         else:
             value = 0
             value1.append(value)
+    sumall.append(sum)
     print(value2)
     print("第"+str(y)+"周的总量： "+str(sum))
     sum = 0
     value2 = []
+print("总量合计"+str(sumall))
+sumall = []
 print("################")
-for y in range(2,24):
+for y in range(2,25):
     ran = random.uniform(0.8,1.2)
     for x in range(6,407):
         data = sheet3.cell_value(x,1)
@@ -100,11 +108,13 @@ for y in range(2,24):
         else:
             value = 0
             value3.append(value)
+    sumall.append(sum)
     print(value3)
     print("第"+str(y)+"周的总量： "+str(sum))
     sum = 0
     value3 = []
-
+print("总量合计"+str(sumall))
+sumall = []
 
 # write_excel_xls(book_name_xls, sheet1_xls, value1)
 # write_excel_xls(book_name_xls, sheet2_xls, value2)
