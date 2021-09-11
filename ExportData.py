@@ -52,40 +52,58 @@ value1 = []
 value2 = []
 value3 = []
 
-x = 6
-for x in range(6,407):
-    data = sheet1.cell_value(x,1)
+x = 0
+y = 0
+sum = 0
+for y in range(2,24):
     ran = random.uniform(0.8,1.2)
-    if type(data)==float:
-        value = data*ran
-        value1.append(value)
-    else:
-        value = 0
-        value1.append(value)
-print(value1)
-    # print("################")
+    for x in range(6,407):
+        data = sheet1.cell_value(x,1)
+        if type(data)==float:
+            value = int(data*ran)
+            value1.append(value)
+            sum = sum + value
+        else:
+            value = 0
+            value1.append(value)
+    print(value1)
+    print("第"+str(y)+"周的总量： "+str(sum))
+    sum = 0
+    value1 = []
 
-for x in range(6,407):
-    data = sheet2.cell_value(x,1)
-    ran = random.uniform(0.8,1.2)
-    if type(data)==float:
-        value = data*ran
-        value2.append(value)
-    else:
-        value = 0
-        value2.append(value)
-print(value2)
 
-for x in range(6,407):
-    data = sheet3.cell_value(x,1)
+print("################")
+for y in range(2,24):
     ran = random.uniform(0.8,1.2)
-    if type(data)==float:
-        value = data*ran
-        value3.append(value)
-    else:
-        value = 0
-        value3.append(value)
-print(value3)
+    for x in range(6,407):
+        data = sheet2.cell_value(x,1)
+        if type(data)==float:
+            value = int(data*ran)
+            value2.append(value)
+            sum = sum + value
+        else:
+            value = 0
+            value1.append(value)
+    print(value2)
+    print("第"+str(y)+"周的总量： "+str(sum))
+    sum = 0
+    value2 = []
+print("################")
+for y in range(2,24):
+    ran = random.uniform(0.8,1.2)
+    for x in range(6,407):
+        data = sheet3.cell_value(x,1)
+        if type(data)==float:
+            value = int(data*ran)
+            value3.append(value)
+            sum = sum + value
+        else:
+            value = 0
+            value3.append(value)
+    print(value3)
+    print("第"+str(y)+"周的总量： "+str(sum))
+    sum = 0
+    value3 = []
 
 
 # write_excel_xls(book_name_xls, sheet1_xls, value1)
