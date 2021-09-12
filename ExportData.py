@@ -58,14 +58,14 @@ y = 0
 sum = 0
 for y in range(2,25):
     ran = random.uniform(0.8,1.2)
-    for x in range(6,407):
+    for x in range(6,408):
         data = sheet1.cell_value(x,1)
         if type(data)==float:
             value = int(data*ran)
             value1.append(value)
             sum = sum + value
         else:
-            value = 0
+            value = "%"
             value1.append(value)
     sumall.append(sum)
     print(value1)
@@ -80,14 +80,14 @@ sumall = []
 print("################")
 for y in range(2,25):
     ran = random.uniform(0.8,1.2)
-    for x in range(6,407):
+    for x in range(6,408):
         data = sheet2.cell_value(x,1)
         if type(data)==float:
             value = int(data*ran)
             value2.append(value)
             sum = sum + value
         else:
-            value = 0
+            value = "%"
             value1.append(value)
     sumall.append(sum)
     print(value2)
@@ -99,14 +99,14 @@ sumall = []
 print("################")
 for y in range(2,25):
     ran = random.uniform(0.8,1.2)
-    for x in range(6,407):
+    for x in range(6,408):
         data = sheet3.cell_value(x,1)
         if type(data)==float:
             value = int(data*ran)
             value3.append(value)
             sum = sum + value
         else:
-            value = 0
+            value = "%"
             value3.append(value)
     sumall.append(sum)
     print(value3)
